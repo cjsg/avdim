@@ -1,2 +1,4 @@
-# avdim
-Code for ICML paper "First-order adversarial vulnerability of neural networks and input dimension"
+# First-order adversarial vulnerability of neural networks and input dimension
+
+This repository will soon contain code to accompany the ICML 2019 paper
+"First-order adversarial vulnerability of neural networks and input dimension"
