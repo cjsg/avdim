@@ -2,7 +2,7 @@ First-order adversarial vulnerability of neural networks and input dimension: Co
 ==================================================================================================
 
 This repository contains code to accompany the ICML 2019 paper
-"First-order adversarial vulnerability of neural networks and input dimension".
+[First-order adversarial vulnerability of neural networks and input dimension](http://proceedings.mlr.press/v97/simon-gabriel19a.html).
 
 Packages
 --------
