@@ -9,6 +9,7 @@ Packages
 
 Special packages used:
 - pytorch (tested on 1.0.0)
+- foolbox (tested on 2.0.0)
 - configargparse
 
 Quick-start
