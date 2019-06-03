@@ -55,7 +55,7 @@ The code was implemented for 3 datasets:
 #### Getting our custom 12-class Mini-ImageNet Dataset
 The custom mini-ImageNet was constructed by merging some similar classes together
 from the usual ImageNet dataset (for example all the dogs). If the resulting
-class got too big (e.g.\ the dog-class), we sampled a random subset of it.
+class got too big (e.g. the dog-class), we sampled a random subset of it.
 The 12 classes obtained were:
 
 > ball - car - cat - dog - elephant - fish - monkey - plane - ship -
@@ -63,5 +63,5 @@ The 12 classes obtained were:
 
 The list of images used in each class can be found in the imgnet12/ folder.  To
 use our mini-imagenet dataloader, create a folder named _imgnet12/train/_
-(resp.\ _imgnet12/val/_), with 12 subfolders (1 per class; name irrelevant)
-containing the images listed in _train.txt_ (resp.\ _val.txt_).
+(resp. _imgnet12/val/_), with 12 subfolders (1 per class; name irrelevant)
+containing the images listed in _train.txt_ (resp. _val.txt_).
