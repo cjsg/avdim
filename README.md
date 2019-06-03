@@ -13,46 +13,45 @@ Special packages used:
 
 Quick-start
 -----------
-- Train a net on CIFAR10 with PGD and compute its vulnerability (as in
-  Section 4.1):
-
+- Train a net with default configuration and compute its vulnerability:
+```
+    python main.py
+```
+- Train a net on CIFAR10 with PGD and compute its vulnerability, with
+  simililar settings than Section 4.1:
 ```
     python main.py --config configs/config_cifar_pgd.txt
-
 ```
-
 - Train a net on upsampled CIFAR10 (bCIFAR10) and compute its vulnerability,
-  (as in Section 4.2):
+  with similar settings than Section 4.2:
 
 ```
     python main.py --config configs/config_bcifar.txt
-
 ```
 - Any parameter from the config file can be overwritten from the command line,
   as in:
-
 ```
     python main.py --config configs/config_bcifar.txt --img_size 64 --log_step 10
-
 ```
 See files in _configs/_ for other typical experiment settings/arguments.
 
-### Remark:
-The experiments in Section 4.2 do not use the vulnerabilities contained in the
-_vulnerability_XX.pt_ files (computed using the `compute_vulnerability`
+#### Remark:
+The experiments in Section 4.2 actually do not use the vulnerabilities contained
+in the _vulnerability_XX.pt_ files (computed using the `compute_vulnerability`
 function from _vulnerability.py_). Instead, they use the test-set
-vulnerabilities contained in state['te_res'] of the _last.pt_ file, averaged
-over the 20 last training epochs.
+vulnerabilities contained in state['logs'] of the file _last.pt_ (and computed
+using our custom pgd implementation from _penalties.py_), averaged over the 20
+last training epochs.
 
 Datasets
 --------
 
 The code was implemented for 3 datasets:
 - MNIST
-- CIFAR10 (and upsampled CIFAR10, see paper, Sec 4.2)
-- a custom 12-class mini-ImageNet dataset (see paper, Sec 4.2).
+- CIFAR10 (and upsampled CIFAR10, see paper Sec 4.2)
+- a custom 12-class mini-ImageNet dataset (see below & paper Sec 4.2).
 
-### Getting our custom 12-class Mini-ImageNet Dataset
+#### Getting our custom 12-class Mini-ImageNet Dataset
 The custom mini-ImageNet was constructed by merging some similar classes together
 from the usual ImageNet dataset (for example all the dogs). If the resulting
 class got too big (e.g.\ the dog-class), we sampled a random subset of it.
